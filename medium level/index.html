@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Текстурный треугольник</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="card">
+    <canvas id="textureCanvas" width="640" height="640" style="width: 640px; height: 640px;"></canvas>
+    <div class="info">
+        <div class="title">
+            🎨 Текстурный треугольник
+            <span class="badge">Perspective-correct UV</span>
+            <span class="badge">Билинейная фильтрация</span>
+            <span class="badge">Мипмаппинг (упрощ.)</span>
+        </div>
+        <div class="controls">
+            <div class="status" id="fpsCounter">⚡ FPS: --</div>
+            <button id="resetMipBtn">⟳ Сбросить анимацию</button>
+        </div>
+    </div>
+    <div class="info" style="margin-top: 8px; font-size: 0.7rem; opacity: 0.7;">
+        <span>📐 Треугольник вращается в 3D | 🔄 перспективная коррекция координат текстуры</span>
+        <span>🧩 Текстура: процедурная (сетка + градиент + шум) для наглядной фильтрации</span>
+    </div>
+</div>
+
+<script src="drawing.js">
+</script>
+</body>
+</html>

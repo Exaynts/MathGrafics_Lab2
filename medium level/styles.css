@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1.5rem;
+  font-family:
+    "Segoe UI",
+    "Inter",
+    system-ui,
+    -apple-system,
+    "Roboto",
+    monospace;
+  background: linear-gradient(135deg, #10141c, #1a1f2a);
+}
+
+.card {
+  border-radius: 2rem;
+  padding: 1.5rem;
+  box-shadow:
+    0 25px 40px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+  background: rgba(18, 22, 32, 0.75);
+  backdrop-filter: blur(8px);
+  transition: all 0.2s;
+}
+
+canvas {
+  display: block;
+  margin: 0 auto;
+  border-radius: 1.2rem;
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  background: #0a0c12;
+  cursor: crosshair;
+}
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.8rem;
+  margin-top: 1.2rem;
+  color: #eef2ff;
+  font-weight: 500;
+  font-size: 0.85rem;
+  text-shadow: 0 1px 1px black;
+}
+
+.badge {
+  border-radius: 2rem;
+  padding: 0.25rem 0.9rem;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.3px;
+  background: #2d3a4e;
+  backdrop-filter: blur(4px);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.status {
+  color: #7dd3fc;
+  font-weight: 500;
+}
+
+button {
+  border: none;
+  border-radius: 2rem;
+  padding: 0.3rem 1rem;
+  color: white;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 0.7rem;
+  background: #2a3a55;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #3f5a7c;
+  transform: scale(0.96);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+a {
+  color: #a5d8ff;
+  text-decoration: none;
+}

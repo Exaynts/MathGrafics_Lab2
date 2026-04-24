@@ -1,0 +1,231 @@
+* {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  background: linear-gradient(145deg, #f0f2f5 0%, #e6e9ef 100%);
+  font-family:
+    "Inter",
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Roboto",
+    sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 2rem;
+}
+
+/* Main card container */
+.glass-panel {
+  max-width: 1350px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(2px);
+  border-radius: 2rem;
+  box-shadow:
+    0 20px 35px -12px rgba(0, 0, 0, 0.2),
+    0 1px 2px rgba(0, 0, 0, 0.05);
+  padding: 1.8rem;
+  transition: all 0.2s;
+}
+
+h1 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin: 0 0 0.2rem 0;
+  background: linear-gradient(135deg, #1e2a3a, #0f1a24);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: -0.3px;
+}
+
+.sub {
+  color: #2c3e50;
+  opacity: 0.7;
+  font-weight: 400;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  border-left: 3px solid #3b82f6;
+  padding-left: 0.8rem;
+}
+
+.flex-main {
+  display: flex;
+  gap: 1.8rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Canvas area */
+.canvas-area {
+  background: #fefefe;
+  border-radius: 1.5rem;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+  padding: 0.6rem;
+}
+
+canvas {
+  display: block;
+  margin: 0 auto;
+  border-radius: 1rem;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.05),
+    0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: crosshair;
+  background: #fff;
+}
+
+/* Controls styling */
+.controls {
+  flex: 1;
+  min-width: 280px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(4px);
+  border-radius: 1.5rem;
+  padding: 1.3rem 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.control-group {
+  margin-bottom: 1.4rem;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #1e293b;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.radio-group,
+.tolerance-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.radio-group label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 500;
+  text-transform: none;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+input,
+select,
+button {
+  font-family: inherit;
+}
+
+input[type="range"] {
+  width: 180px;
+  margin-right: 0.5rem;
+}
+
+.tolerance-value {
+  background: #1e293b;
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.color-preview {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#fillColorPicker {
+  width: 48px;
+  height: 40px;
+  border: 2px solid #cbd5e1;
+  border-radius: 12px;
+  cursor: pointer;
+  background: #ffffff;
+}
+
+button {
+  background: #1e293b;
+  border: none;
+  color: white;
+  font-weight: 500;
+  padding: 0.55rem 1rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 0.8rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+button.primary {
+  background: #3b82f6;
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.25);
+}
+
+button.primary:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+button:hover {
+  background: #0f172a;
+  transform: scale(0.98);
+}
+
+.bench-results {
+  background: #0f172a;
+  color: #e2e8f0;
+  border-radius: 1.2rem;
+  padding: 0.9rem 1rem;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.bench-results p {
+  margin: 0.3rem 0;
+}
+
+.stat-badge {
+  display: inline-block;
+  background: #334155;
+  border-radius: 32px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.7rem;
+  margin-right: 0.5rem;
+}
+
+hr {
+  margin: 1rem 0;
+  border-color: #cbd5e180;
+}
+
+.flex-buttons {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.note {
+  font-size: 0.7rem;
+  color: #475569;
+  margin-top: 0.5rem;
+  text-align: center;
+}

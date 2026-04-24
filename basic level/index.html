@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Flood Fill</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="glass-panel">
+    <h1>🎨 Flood Fill · Алгоритмы заливки</h1>
+    <div class="sub">Stack (4/8-связность) + Scanline оптимизация | Tolerance | Сравнение производительности 100x100</div>
+
+    <div class="flex-main">
+        <!-- Canvas область -->
+        <div class="canvas-area">
+            <canvas id="mainCanvas" width="500" height="500" style="width:500px; height:500px;"></canvas>
+            <div class="note">⚡ Кликните внутри области — заливка выбранным алгоритмом</div>
+        </div>
+
+        <!-- Панель управления -->
+        <div class="controls">
+            <div class="control-group">
+                <label>🔗 Алгоритм заливки</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="algorithm" value="stack" checked> Stack Flood Fill</label>
+                    <label><input type="radio" name="algorithm" value="scanline"> Scanline Fill (оптимиз.)</label>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label>🔄 Связность (Stack)</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="connectivity" value="4" checked> 4-связность</label>
+                    <label><input type="radio" name="connectivity" value="8"> 8-связность</label>
+                </div>
+                <div class="note" style="margin-top: 4px;">* Scanline использует 4-связность (вертикаль/горизонталь)</div>
+            </div>
+
+            <div class="control-group">
+                <label>🎨 Цвет заливки</label>
+                <div class="color-preview">
+                    <input type="color" id="fillColorPicker" value="#FF6B4A">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label>🎚️ Допуск (Tolerance) — разница цветов</label>
+                <div class="tolerance-row">
+                    <input type="range" id="toleranceSlider" min="0" max="70" value="12" step="1">
+                    <span id="toleranceValue" class="tolerance-value">12</span>
+                </div>
+                <div class="note">0 = точное совпадение, 30+ захватывает близкие оттенки</div>
+            </div>
+
+            <div class="flex-buttons">
+                <button id="resetBtn" style="background:#334155;">⟳ Сбросить рисунок</button>
+                <button id="benchmarkBtn" class="primary">📊 Benchmark 100x100</button>
+            </div>
+
+            <!-- Блок производительности -->
+            <div class="bench-results" id="benchPanel">
+                <p>⚙️ <strong>Тест производительности (область 100×100)</strong></p>
+                <p id="benchStack4">🔹 Stack 4‑связность: —</p>
+                <p id="benchStack8">🔸 Stack 8‑связность: —</p>
+                <p id="benchScanline">✨ Scanline Fill: —</p>
+                <p id="benchNote" style="font-size:0.7rem; opacity:0.7;">Нажмите "Benchmark" для замеров</p>
+            </div>
+            <div class="note" style="margin-top: 8px;">
+                💡 <strong>оптимизированная версия</strong> Scanline заполняет целыми горизонтальными отрезками → меньше операций в стеке.
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="drawing.js"></script>
+</body>
+</html>
